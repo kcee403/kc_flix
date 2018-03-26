@@ -1,0 +1,41 @@
+.crop {
+    height: 380px;
+    /*width: 400px;*/
+    overflow: hidden;
+}
+.crop img {
+    height: auto;
+    width: 100%;
+    margin: 0px 1px;
+}
+.movieCard {
+  margin: 0px 0px;
+  padding: 0px;
+  box-sizing: content-box;
+  color: $gray;
+  font-family: 'Nunito';
+  word-spacing: 1px;
+}
+.glyphicon-heart, .glyphicon-heart-empty {
+  color: $pink;
+  transform: scale(1.7);
+}
+
+.movieTitle {
+  font-weight: bold;
+  font-size: 1.68rem;
+}
+.card-body {
+  padding: 4px 9px 10px;
+}
+.card-text {
+  font-size: 1.52rem;
+}
+// === Star Ratings ====
+span.material-rating {
+  padding-top: 45px;
+}
+.material-rating div {
+  display: inline !important;
+  margin-top: 20px !important;
+}

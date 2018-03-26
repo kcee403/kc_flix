@@ -1,0 +1,19 @@
+@mixin mediaQ($break) {
+  $value: map-get($breakPoint, $break/*key to map, but this key is var that holds the functions param*/);
+  $small:    map-get($breakPoint, 'small'); /*'small' is in the map of variables aka properties*/
+
+   @if $value < $small
+   {
+      @media (max-width: $value)// its setting up the mixin to use either max
+      {                         // or min - width then use value be the min or
+        @content;               // max's value which is based off of the map's
+      }                         // key.
+    }
+  @else
+    {
+      @media (min-width: $value)
+      {
+        @content;
+      }
+    }
+}
