@@ -13,3 +13,4 @@ require('./bootstrap');
  */
 
 require('./index.js');
+require('./components/auth/Register.js');

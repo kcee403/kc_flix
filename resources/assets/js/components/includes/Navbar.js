@@ -29,7 +29,7 @@ class Navbar extends Component {
                       <li> <a href="">Login</a> </li>
                       <li> <a href="">Logout</a> </li>
                       <li> <a href="">Orders</a> </li>
-                      <li> <a href="">Register</a> </li>
+                      <li> <a href="/register">Register</a> </li>
                     </ul>
                   </li>
                       <li>{this.props.showSearch ? <Search /> : null}  </li>

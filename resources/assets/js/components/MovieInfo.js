@@ -6,7 +6,6 @@ import {connect} from 'react-redux';
 import { Rating } from 'material-ui';
 import NO_IMAGES from '../images/no_image.jpg';
 
-
 class MovieInfo extends Component {
   state = {
     isFavorited: false,

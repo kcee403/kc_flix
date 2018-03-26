@@ -396,7 +396,7 @@ a {
 
 .container {
   width: 80% !important;
-  margin: -140px auto 0px !important;
+  margin: 0px auto 0px !important;
   max-width: 1200px;
   margin: 0 auto;
   z-index: -20;

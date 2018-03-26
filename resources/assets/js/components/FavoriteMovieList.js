@@ -20,6 +20,7 @@ class FavoriteMovieList extends Component {
     )
   }
 }
+
 function mapStateToProps(state) {
   console.log("FavoriteMovieList: " + state);
   return {

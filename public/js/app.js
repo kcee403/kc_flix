@@ -16597,7 +16597,7 @@ var Navbar = function (_Component) {
                           ' ',
                           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'a',
-                            { href: '' },
+                            { href: '/register' },
                             'Register'
                           ),
                           ' '
@@ -26929,6 +26929,7 @@ __webpack_require__(212);
  */
 
 __webpack_require__(235);
+__webpack_require__(526);
 
 /***/ }),
 /* 212 */
@@ -48001,6 +48002,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(216);
+
 
 /***/ }),
 /* 216 */
@@ -90655,6 +90657,143 @@ var addToFavorite = function addToFavorite() {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__includes_Navbar__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_bootstrap__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_redux__ = __webpack_require__(50);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+var Register = function (_Component) {
+  _inherits(Register, _Component);
+
+  function Register() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
+    _classCallCheck(this, Register);
+
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Register.__proto__ || Object.getPrototypeOf(Register)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      name: '',
+      email: '',
+      password: ''
+    }, _this.handleSubmit = function (event) {}, _temp), _possibleConstructorReturn(_this, _ret);
+  }
+
+  _createClass(Register, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: '' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__includes_Navbar__["a" /* default */], null),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'form',
+          { className: 'mt-lg-5' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'form-group' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'name',
+              className: 'form-control',
+              placeholder: 'Enter Name',
+              onChange: function onChange(event) {
+                return _this2.setState({ name: event.target.value });
+              }
+            }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { className: 'form-check-label', htmlFor: 'exampleCheck1' },
+              'Check me out'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'form-group' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { htmlFor: 'exampleInputEmail1' },
+              'Email address'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'email',
+              className: 'form-control',
+              'aria-describedby': 'emailHelp',
+              placeholder: 'Enter email',
+              onChange: function onChange(event) {
+                return _this2.setState({ email: event.target.value });
+              }
+            }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'small',
+              { id: 'emailHelp', className: 'form-text text-muted' },
+              'Well never share your email with anyone else.'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'form-group' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { htmlFor: 'exampleInputPassword1' },
+              'Password'
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'password',
+              className: 'form-control',
+              id: 'exampleInputPassword1',
+              placeholder: 'Enter Password',
+              onChange: function onChange(event) {
+                return _this2.setState({ password: event.target.value });
+              } })
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'button',
+            {
+              type: 'submit',
+              className: 'btn btn-primary' },
+            ' Submit'
+          )
+        )
+      ) // End
+      ;
+    }
+  }]);
+
+  return Register;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+ReactDOM.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Register, null), document.getElementById('register')); // ?? Why brackets?
 
 /***/ })
 /******/ ]);
