@@ -15,8 +15,9 @@ a {
   @include mediaQ('large') {
       text-decoration: none !important;
       &:hover {
+        color: white;
         border-radius: 2px;
-        text-decoration: none;
+        text-decoration: none !important;
         background-color: transparent !important;
       }
   }

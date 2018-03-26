@@ -1,15 +1,19 @@
+.float-right {
+  @include mediaQ('large') {
+      float: right;
+  }
+}
 .search {
   margin: 5px 0px 3px 0px;
   text-align: right;
 
   form .form-group button {
     background-color: transparent;
-
     padding: 2px 9px;
     margin-left: 5px;
+    margin-bottom: 2px;
     border-radius: 4px;
     color: $orange;
-    border-top: 2px solid $orange;
     @include mediaQ('large') {
       border: 2px solid white;
       color: white;
@@ -27,7 +31,7 @@
     padding-left: 6px;
     color: $darkGray;
       width: 96%;
-      @include mediaQ('small') {
+      @include mediaQ('large') {
         width: 60%;
         border-color: white;
       }

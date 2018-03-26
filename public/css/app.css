@@ -24,8 +24,9 @@ a {
   }
 
   a:hover {
+    color: white;
     border-radius: 2px;
-    text-decoration: none;
+    text-decoration: none !important;
     background-color: transparent !important;
   }
 }
@@ -66,6 +67,16 @@ a {
   }
 }
 
+.float-right {
+  /*'small' is in the map of variables aka properties*/
+}
+
+@media (min-width: 820px) {
+  .float-right {
+    float: right;
+  }
+}
+
 .search {
   margin: 5px 0px 3px 0px;
   text-align: right;
@@ -75,9 +86,9 @@ a {
   background-color: transparent;
   padding: 2px 9px;
   margin-left: 5px;
+  margin-bottom: 2px;
   border-radius: 4px;
   color: #f83600;
-  border-top: 2px solid #f83600;
   /*'small' is in the map of variables aka properties*/
 }
 
@@ -105,7 +116,7 @@ a {
   /*'small' is in the map of variables aka properties*/
 }
 
-@media (min-width: 440px) {
+@media (min-width: 820px) {
   .search form .form-group input {
     width: 60%;
     border-color: white;

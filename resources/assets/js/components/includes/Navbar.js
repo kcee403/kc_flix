@@ -23,6 +23,8 @@ class Navbar extends Component {
               <div className="nav-fostrap">
                 <ul>
                   <li><NavLink className="title-mobile" to="/">KC FLIX</NavLink></li>
+                  <li>{this.props.showSearch ? <Search /> : null}  </li>
+              <div className="float-right">
                   <li><NavLink to="/fav">Your Favs</NavLink></li>
                   <li><a href="javascript:void(0)" className="useraccount">User Account<span className="arrow-down"></span></a>
                     <ul className="dropdown">
@@ -32,7 +34,7 @@ class Navbar extends Component {
                       <li> <a href="/register">Register</a> </li>
                     </ul>
                   </li>
-                      <li>{this.props.showSearch ? <Search /> : null}  </li>
+              </div>
                 </ul>
               </div>
               <div className="nav-bg-fostrap">
