@@ -39,7 +39,7 @@ class Navbar extends Component {
               </div>
               <div className="nav-bg-fostrap">
                 <div className="navbar-fostrap"> <span></span> <span></span> <span></span> </div>
-                <a href="" className="title-mobile">KC-FlIX</a>
+                <NavLink className="title-mobile" to="/">KC FLIX</NavLink>
               </div>
             </nav>
             <div className='content'>

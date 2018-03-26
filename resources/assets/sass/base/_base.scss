@@ -8,8 +8,8 @@
   box-sizing: border-box;
 }
 h1, h2, h3, h4 {
-  color: $gray;
-  font-family: 'Nunito';
+  color: $gray !important;
+  font-family: 'Nunito' !important; //=Baloo|Coda+Caption:
 }
 a {
   @include mediaQ('large') {

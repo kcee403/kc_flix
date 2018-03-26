@@ -4034,9 +4034,9 @@ var Navbar = function (_Component) {
                     ' '
                   ),
                   __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'a',
-                    { href: '', className: 'title-mobile' },
-                    'KC-FlIX'
+                    __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                    { className: 'title-mobile', to: '/' },
+                    'KC FLIX'
                   )
                 )
               ),
