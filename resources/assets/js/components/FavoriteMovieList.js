@@ -8,7 +8,6 @@ class FavoriteMovieList extends Component {
     {console.log(this.props.favorites)}
     return(
       <div>
-      <Navbar showSearch={false}  />
       <div className="container">
       <h2> My Favorite Movies </h2>
 

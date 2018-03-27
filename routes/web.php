@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('root');
 });
 Auth::routes();
+
 Route::resource('users', 'UserController');

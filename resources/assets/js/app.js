@@ -12,5 +12,6 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-require('./index.js');
-require('./components/auth/Register.js');
+ require('./index.js');
+
+ require('./components/auth/Register.js');

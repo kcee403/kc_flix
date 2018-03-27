@@ -25,6 +25,7 @@ const logger = store => {
  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
  const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger) ) );
 
-
+if( document.getElementById('root') ) {
 ReactDOM.render(  <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}><Provider store={store}><App /></Provider></MuiThemeProvider>, document.getElementById('root'));
+}
 registerServiceWorker();

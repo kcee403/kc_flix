@@ -1,6 +1,6 @@
 
-@extends('layouts')
+@extends('layouts.app')
 
   @section('content')
-                 <div id="register"> {{--REACT ROOT HERE --}}  </div>
+                 {{-- <div id=""> <p> Register with no view folder </p>{{--REACT ROOT HERE --}}  </div> --}}
   @endsection

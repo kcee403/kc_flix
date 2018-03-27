@@ -10,7 +10,7 @@ class MovieResults extends Component {
   render() {
     return (
     <div>
-    <Navbar showSearch={true} /> {/* Everytime you want to use Navbar you may hide the search bar by passing true or false */}
+  {/*  <Navbar showSearch={true} />  Everytime you want to use Navbar you may hide the search bar by passing true or false */}
 
       <div className="container">
       <h2> Movie Search Results </h2>

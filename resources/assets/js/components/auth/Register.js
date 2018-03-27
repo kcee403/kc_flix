@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+
 import Navbar from '../includes/Navbar';
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
 
 import { connect } from 'react-redux';
+
+import registerServiceWorker from '../../registerServiceWorker';
 
 class Register extends Component {
 
@@ -19,8 +23,8 @@ class Register extends Component {
 
     return (
 
-      <div className="">
-          <Navbar />
+      <div className="container">
+
           <form className="mt-lg-5">
           <div className="form-group">
 
@@ -67,4 +71,6 @@ class Register extends Component {
     );
   }
 }
-ReactDOM.render(<Register />, document.getElementById('register')); // ?? Why brackets?
+if( document.getElementById('register') ) {
+  ReactDOM.render(<Register />, document.getElementById('register')); // ?? Why brackets?
+}
