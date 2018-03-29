@@ -31,6 +31,13 @@
   letter-spacing: 3.3px;
   word-spacing: 1.7px;
 }
+%overlayDefault {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 @mixin input-placeholder {
     &.placeholder { @content; }
     &:-moz-placeholder { @content; }

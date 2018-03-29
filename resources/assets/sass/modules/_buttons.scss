@@ -7,9 +7,10 @@
   border-color: $orange;
   color: $orange;
   margin-bottom: 15px;
+  border-radius: 1px;
   transition: background-color .25s, color .25s;
   &:hover {
-    background-image: linear-gradient(to left, $brightOrange 30%, $orange);
+    background-image: linear-gradient(to left, darken($brightOrange, 3) 60%, $orange);
     background-color: white;
     border-color: $brightOrange;
     color: white;

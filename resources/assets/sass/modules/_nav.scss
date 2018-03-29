@@ -17,9 +17,10 @@
     border-radius: 4px;
     color: $orange;
     @include mediaQ('large') {
-      border: 2px solid white;
+      border: 0px solid white;
       color: white;
       margin-top: 0px;
+      margin-bottom: 4px;
     }
     &:focus, &:active {
       color: none;

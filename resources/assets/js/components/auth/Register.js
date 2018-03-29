@@ -5,7 +5,7 @@ import Navbar from '../includes/Navbar';
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
 
 import { connect } from 'react-redux';
-
+import $ from 'jquery';
 import registerServiceWorker from '../../registerServiceWorker';
 
 class Register extends Component {
@@ -15,6 +15,14 @@ class Register extends Component {
     email: '',
     password: '',
   }
+  componentDidMount() {
+    $(".input-button button").click(function(e) {
+
+	$(".form-wrapper").addClass("send");
+
+	e.preventDefault();
+})
+  }
 
   handleSubmit = event => {
 
@@ -22,52 +30,33 @@ class Register extends Component {
   render() {
 
     return (
+<div className="form-body">
+      <div class="form-wrapper">
+          <h2 className="form-title">Register with KC-Flix</h2>
+  	<div class="success">
+  		<i class="fa fa-check fa-3x"></i>
+  		<h1>Thank you for subscribing</h1>
+  	</div>
 
-      <div className="container">
+  	<div class="input-text">
+    	<input type="text" id="label1" placeholder="Your name"/>
+  		<label htmlFor="label1">Your name</label>
 
-          <form className="mt-lg-5">
-          <div className="form-group">
+  	</div>
+  	<div class="input-text">
 
-            <input type="name"
-            className="form-control"
-            placeholder="Enter Name"
-               onChange={(event)=>this.setState({name : event.target.value})}
-             />
-
-            <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-          </div>
-
-           <div className="form-group">
-             <label htmlFor="exampleInputEmail1">Email address</label>
-
-             <input type="email"
-              className="form-control"
-              aria-describedby="emailHelp"
-              placeholder="Enter email"
-              onChange={(event)=>this.setState({email : event.target.value})}
-              />
-
-             <small id="emailHelp" className="form-text text-muted">Well never share your email with anyone else.</small>
-           </div>
-
-           <div className="form-group">
-             <label htmlFor="exampleInputPassword1">Password</label>
-
-             <input type="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Enter Password"
-              onChange={(event)=>this.setState({password : event.target.value})} />
-
-           </div>
-
-           <button
-             type="submit"
-             className="btn btn-primary"> Submit
-           </button>
-          </form>
-
-      </div> // End
+  		<input type="text" id="label2" placeholder="E-mail" />
+  		<label htmlFor="label2">E-mail</label>
+  	</div>
+    <div class="input-text">
+  		<input type="text" id="label3" placeholder="Password" />
+  		<label htmlFor="label3">Password</label>
+  	</div>
+  	<div class="input-button">
+  		<button><i class="fa fa-paper-plane"></i></button>
+  	</div>
+  </div>
+  </div>
     );
   }
 }
