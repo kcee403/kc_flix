@@ -23,7 +23,7 @@ html,body {
 	margin-top: 10px;
 	font-family: 'Nunito';
 	@include mediaQ('large') {
-		margin-top: 150px;
+		margin-top: 280px;
 
 		left: 8%;
 	}
@@ -35,9 +35,15 @@ html,body {
 		font-weight: 400;
 	}
 }
-
+.kcflix {
+	font-family: 'Permanent Marker', cursive;
+	color: $brightOrange;
+}
 .form-title {
-  margin: -30px 0px 55px 0px;
+  margin: -10px 0px 55px 0px;
+	@include mediaQ('extraSmall') {
+		font-size: 23px;
+	}
 }
 .form-wrapper {
 	position: fixed;
@@ -49,12 +55,14 @@ html,body {
 	min-height: 100px;
 	border-radius: 3px;
 	box-shadow: 0 0 9px rgba(0,0,0,0.6);
-	padding: 53px 30px;
+	padding: 53px 30px !important;
   @include mediaQ('medium') {
-    width: 500px;
   	padding: 70px 60px;
 		top: 50%;
   }
+	@include mediaQ('extraSmall') {
+		line-height: 1.2 !important;
+	}
 }
 
 .send { transition: all 1s ease-in-out; }

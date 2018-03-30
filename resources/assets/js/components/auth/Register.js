@@ -35,9 +35,11 @@ class Register extends Component {
 
     <div className="col-md-3 form-side-header">
         <h2 style={{color: 'white'}}>Sign Up to start watching your favorite films!</h2>
+        <h4>
+          <a href="/">..Or head back <i class="fas fa-arrow-left"></i></a></h4>
     </div>
     <div className="form-wrapper col-md-4 form-header">
-        <h2 className="form-title ">Register with KC-Flix</h2>
+        <h2 className="form-title ">Signup with <span className="kcflix">KC-FLIX</span></h2>
         <div className="success">
           <i className="fa fa-check fa-3x"></i>
           <h1>Thank you for subscribing</h1>
@@ -54,9 +56,25 @@ class Register extends Component {
         </div>
 
         <div className="input-text">
-          <input type="text" id="label3" placeholder="Password" />
-          <label htmlFor="label3">Password</label>
+          <input type="text" id="label3" placeholder="Address" />
+          <label htmlFor="label3">Address</label>
         </div>
+
+        <div className="input-text">
+          <input type="text" id="label3" placeholder="State & Zip" />
+          <label htmlFor="label3">State & Zip</label>
+        </div>
+
+        <div className="input-text">
+          <input type="text" id="label4" placeholder="Password" />
+          <label htmlFor="label4">Password</label>
+        </div>
+
+        <div className="input-text">
+          <input type="text" id="label5" placeholder="Confirm Password" />
+          <label htmlFor="label5">Confirm Password</label>
+        </div>
+
 
         <div className="input-button">
           <button><i className="fa fa-paper-plane"></i></button>
