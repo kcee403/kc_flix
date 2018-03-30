@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
 
-* { box-sizing: border-box; }
 
 html,body {
 	height: 100%;
@@ -14,11 +13,50 @@ html,body {
 	font-weight: 400;
 	background-image: $soundCloud;
   @extend %overlayDefault;
+	height: 100%;
+	width: 100%;
+}
+.form-side-header {
+	text-align: left;
+	position: fixed;
+	color: white !important;
+	margin-top: 10px;
+	font-family: 'Nunito';
+	@include mediaQ('large') {
+		margin-top: 150px;
+
+		left: 8%;
+	}
+}
+.form-header {
+	h2 {
+		color: $gray;
+		font-family: 'Roboto';
+		font-weight: 400;
+	}
 }
 
 .form-title {
   margin: -30px 0px 55px 0px;
 }
+.form-wrapper {
+	position: fixed;
+	top: 42%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #fff;
+  width: 96%;
+	min-height: 100px;
+	border-radius: 3px;
+	box-shadow: 0 0 9px rgba(0,0,0,0.6);
+	padding: 53px 30px;
+  @include mediaQ('medium') {
+    width: 500px;
+  	padding: 70px 60px;
+		top: 50%;
+  }
+}
+
 .send { transition: all 1s ease-in-out; }
 
 .send .success { display: block; }
@@ -43,25 +81,6 @@ html,body {
 	font-weight: 700;
 	text-transform: uppercase;
 }
-
-.form-wrapper {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: #fff;
-
-  width: 98%;
-	min-height: 100px;
-	border-radius: 3px;
-	box-shadow: 0 0 5px rgba(0,0,0,0.4);
-	padding: 53px 30px;
-  @include mediaQ('medium') {
-    width: 500px;
-  	padding: 70px 60px;
-  }
-}
-
 .input-text {
 	display: block;
 	margin-bottom: 20px;

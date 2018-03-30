@@ -15,12 +15,13 @@ class Register extends Component {
     email: '',
     password: '',
   }
+
   componentDidMount() {
-    $(".input-button button").click(function(e) {
+    $(".input-button button").click(function(event) {
 
 	$(".form-wrapper").addClass("send");
 
-	e.preventDefault();
+	event.preventDefault();
 })
   }
 
@@ -30,33 +31,39 @@ class Register extends Component {
   render() {
 
     return (
-<div className="form-body">
-      <div class="form-wrapper">
-          <h2 className="form-title">Register with KC-Flix</h2>
-  	<div class="success">
-  		<i class="fa fa-check fa-3x"></i>
-  		<h1>Thank you for subscribing</h1>
-  	</div>
+<div className="form-body ">
 
-  	<div class="input-text">
-    	<input type="text" id="label1" placeholder="Your name"/>
-  		<label htmlFor="label1">Your name</label>
+    <div className="col-md-3 form-side-header">
+        <h2 style={{color: 'white'}}>Sign Up to start watching your favorite films!</h2>
+    </div>
+    <div className="form-wrapper col-md-4 form-header">
+        <h2 className="form-title ">Register with KC-Flix</h2>
+        <div className="success">
+          <i className="fa fa-check fa-3x"></i>
+          <h1>Thank you for subscribing</h1>
+        </div>
 
-  	</div>
-  	<div class="input-text">
+        <div className="input-text">
+          <input type="text" id="label1" placeholder="Your name"/>
+          <label htmlFor="label1">Your name</label>
+        </div>
 
-  		<input type="text" id="label2" placeholder="E-mail" />
-  		<label htmlFor="label2">E-mail</label>
-  	</div>
-    <div class="input-text">
-  		<input type="text" id="label3" placeholder="Password" />
-  		<label htmlFor="label3">Password</label>
-  	</div>
-  	<div class="input-button">
-  		<button><i class="fa fa-paper-plane"></i></button>
-  	</div>
-  </div>
-  </div>
+        <div className="input-text">
+          <input type="text" id="label2" placeholder="E-mail" />
+          <label htmlFor="label2">E-mail</label>
+        </div>
+
+        <div className="input-text">
+          <input type="text" id="label3" placeholder="Password" />
+          <label htmlFor="label3">Password</label>
+        </div>
+
+        <div className="input-button">
+          <button><i className="fa fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+</div>
     );
   }
 }

@@ -13,7 +13,7 @@ class MovieResults extends Component {
   {/*  <Navbar showSearch={true} />  Everytime you want to use Navbar you may hide the search bar by passing true or false */}
 
       <div className="container">
-      <h2> Movie Search Results </h2>
+      <h2 className="page-header"> Movie Search Results </h2>
         { this.props.movies ?        // ===== If there is nothing there, 'undefined', return null so that you don't get "can't use property of null"
           this.props.movies.map(item =>
           <MovieItem movie={item} showButton={true} key={item.id} /> ) :

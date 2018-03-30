@@ -23,3 +23,12 @@
     height: 0px !important;
   }
 }
+.transparentBtn {
+  background-color: transparent !important;
+  border-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  &:hover {
+    border-color: none;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
-
+import { NavLink } from 'react-router-dom';
 import { API_KEY } from '../secrets.js';
 import { requestMovies } from '../actions';
 import { connect } from 'react-redux';
@@ -31,7 +31,7 @@ class Search extends Component {
     return (
       <div className="search">
         <Form style={{float: 'none'}} noValidate className="col-md-12 col-md-offset-3" onSubmit={this.handleSubmit}>
-          <FormGroup>
+          <FormGroup style={{margin: '-10px 0px 0px 0px'}}>
             <ControlLabel>Search</ControlLabel> {' '}
 
              <input type="text"
@@ -39,14 +39,15 @@ class Search extends Component {
               placeholder="Type Movie Name"
               onChange={(event)=>this.setState({query: event.target.value})}
              /> {' '}
-             <Button bsStyle="primary"
+             <NavLink className="transparentBtn" to="/"> <Button bsStyle="primary"
                      className="glyphicon glyphicon-search"
                      onClick={()=>this.search()}
                      ></Button>
+             </NavLink>
           </FormGroup>
         </Form>
       </div>
     );
   }
-}
+}  <NavLink className="title-mobile" to="/">KC FLIX</NavLink>
 export default connect(null, { requestMovies })(Search); // ?? Why brackets?

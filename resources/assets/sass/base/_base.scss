@@ -7,9 +7,11 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
-h1, h2, h3, h4 {
-  color: $gray !important;
+.page-header {
+  color: $gray;
   font-family: 'Nunito' !important; //=Baloo|Coda+Caption:
+  margin-bottom: 50px !important;
+  margin-top: 0px !important;
 }
 a {
   @include mediaQ('large') {
