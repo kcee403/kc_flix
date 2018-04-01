@@ -184,7 +184,7 @@
     left: 100px;
     right: 100px;
     text-align: center;
-    color: #FFF;
+    color: #FFF !important;
 }
 .nav-fostrap.visible {
   z-index: 1;
@@ -246,7 +246,7 @@
 
 .nav-fostrap li a {
   display: block;
-  color: $orange;
+  color: $orange !important;
   font-weight: 600;
 }
 

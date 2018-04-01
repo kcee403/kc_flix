@@ -20,8 +20,9 @@ class Search extends Component {
     .then(jsObj => {this.props.requestMovies(jsObj.results)}); //== HERE movies becomes the prop of SEARCH.js
   }
   handleSubmit = event => {
-    if(this.state.query === '') {
+    if(this.state.query == 'f') {
       event.target.preventDefault();
+      console.log('Search query prevented from entering an empty space.');
     }
       else {
         return this.state.formMessage;

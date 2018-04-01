@@ -59,7 +59,7 @@ addToFavorite = () => {
           </span>
           <span>{this.props.showButton ? this.displayFav() : null}</span>
           <a href="#" className="btn btn-primary">
-              Info
+           <i class="fas fa-info"></i>
           </a>
         </div>
       </ul>

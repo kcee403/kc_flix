@@ -31,7 +31,7 @@ class Navbar extends Component {
                       <li> <a href="">Login</a> </li>
                       <li> <a href="">Logout</a> </li>
                       <li> <a href="">Orders</a> </li>
-                      <li> <a href="/register">Register</a> </li>
+                      <li><NavLink to="/register">Register</NavLink></li>
                     </ul>
                   </li>
               </div>

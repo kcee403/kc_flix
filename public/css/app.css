@@ -10,7 +10,7 @@
   color: #919191;
   font-family: 'Nunito' !important;
   margin-bottom: 50px !important;
-  margin-top: 0px !important;
+  margin-top: -70px !important;
 }
 
 a {
@@ -46,14 +46,13 @@ a {
 
 .card-body .btn {
   margin-left: 10px;
-  padding-left: 10px;
   right: 4%;
   position: absolute;
   background-color: transparent;
   border-color: #f83600;
-  color: #f83600;
+  color: #f83600 !important;
   margin-bottom: 15px;
-  border-radius: 1px;
+  border-radius: 2px;
   -webkit-transition: background-color .25s, color .25s;
   transition: background-color .25s, color .25s;
 }
@@ -63,7 +62,7 @@ a {
   background-image: linear-gradient(to left, #ef8400 60%, #f83600);
   background-color: white;
   border-color: #fe8c00;
-  color: white;
+  color: white !important;
 }
 
 .material-rating div button {
@@ -308,7 +307,7 @@ a {
     left: 100px;
     right: 100px;
     text-align: center;
-    color: #FFF;
+    color: #FFF !important;
   }
 
   .nav-fostrap.visible {
@@ -376,7 +375,7 @@ a {
 
   .nav-fostrap li a {
     display: block;
-    color: #f83600;
+    color: #f83600 !important;
     font-weight: 600;
   }
 
@@ -594,10 +593,10 @@ body {
   margin-bottom: 10px;
   -webkit-transform: translateY(-27px);
           transform: translateY(-27px);
-  -webkit-transition: color .22s, -webkit-transform .25s ease-in-out;
-  transition: color .22s, -webkit-transform .25s ease-in-out;
-  transition: transform .25s ease-in-out, color .22s;
-  transition: transform .25s ease-in-out, color .22s, -webkit-transform .25s ease-in-out;
+  -webkit-transition: color .13s, -webkit-transform .15s ease-in-out;
+  transition: color .13s, -webkit-transform .15s ease-in-out;
+  transition: transform .15s ease-in-out, color .13s;
+  transition: transform .15s ease-in-out, color .13s, -webkit-transform .15s ease-in-out;
   -webkit-transform-origin: 0% 100%;
           transform-origin: 0% 100%;
 }

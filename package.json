@@ -29,13 +29,17 @@
     "react-dom": "^16.2.0"
   },
   "dependencies": {
+    "email-existence": "^0.1.6",
+    "gulp-powerbi-package-validator": "^1.0.1",
     "material-ui": "^0.20.0",
     "material-ui-rating": "^1.4.1",
+    "powerbi-visuals-package-validator": "^1.0.1",
     "react-bootstrap": "^0.32.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-star-rating": "^1.4.2",
     "react-star-rating-component": "^1.4.1",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "snitchmail": "^1.0.4"
   }
 }

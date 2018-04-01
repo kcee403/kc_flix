@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Navbar from '../includes/Navbar';
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import $ from 'jquery';
 import registerServiceWorker from '../../registerServiceWorker';
@@ -20,15 +20,6 @@ class Register extends Component {
     state: '',
     zipcode: 0
   }
-
-  componentDidMount() {
-   $(".input-button button").click(function(event) {
-
-   $(".form-wrapper").addClass("send");
-
-   event.preventDefault();
-  })
- }
 
   handleNameChange = event => {
     this.setState({
@@ -95,10 +86,7 @@ class Register extends Component {
     <div className="col-md-3 form-side-header">
         <h2 style={{color: 'white'}}>Sign Up to start watching your favorite films!</h2>
         <h4>
-          <NavLink to="/">
-            ..Or head back <i className="fas fa-arrow-left"></i>
-          </NavLink>
-        </h4>
+          <a href="/">..Or head back <i className="fas fa-arrow-left"></i></a></h4>
     </div>
     <form className="form-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
         <h2 className="form-title ">Signup with <span className="kcflix">KC-FLIX</span></h2>

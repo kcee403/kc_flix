@@ -1,19 +1,19 @@
 .card-body .btn {
   margin-left: 10px;
-  padding-left: 10px;
+
   right: 4%;
   position: absolute;
   background-color: transparent;
   border-color: $orange;
-  color: $orange;
+  color: $orange !important;
   margin-bottom: 15px;
-  border-radius: 1px;
+  border-radius: 2px;
   transition: background-color .25s, color .25s;
   &:hover {
     background-image: linear-gradient(to left, darken($brightOrange, 3) 60%, $orange);
     background-color: white;
     border-color: $brightOrange;
-    color: white;
+    color: white !important;
   }
 }
 .material-rating div button {

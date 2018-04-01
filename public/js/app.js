@@ -14377,13 +14377,11 @@ var Navbar = function (_Component) {
                           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'li',
                             null,
-                            ' ',
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                              'a',
-                              { href: '/register' },
+                              __WEBPACK_IMPORTED_MODULE_1_react_router_dom__["b" /* NavLink */],
+                              { to: '/register' },
                               'Register'
-                            ),
-                            ' '
+                            )
                           )
                         )
                       )
@@ -14430,9 +14428,9 @@ var Navbar = function (_Component) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__ = __webpack_require__(422);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__BrowserRouter__["a"]; });
+/* unused harmony reexport BrowserRouter */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__HashRouter__ = __webpack_require__(424);
-/* unused harmony reexport HashRouter */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__HashRouter__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Link__ = __webpack_require__(189);
 /* unused harmony reexport Link */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__MemoryRouter__ = __webpack_require__(426);
@@ -20431,8 +20429,9 @@ var Search = function (_Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Search.__proto__ || Object.getPrototypeOf(Search)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       query: ''
     }, _this.handleSubmit = function (event) {
-      if (_this.state.query === '') {
+      if (_this.state.query == 'f') {
         event.target.preventDefault();
+        console.log('Search query prevented from entering an empty space.');
       } else {
         return _this.state.formMessage;
       }
@@ -26368,7 +26367,7 @@ var MovieItem = function (_Component) {
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'a',
               { href: '#', className: 'btn btn-primary' },
-              'Info'
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { 'class': 'fas fa-info' })
             )
           )
         )
@@ -27337,8 +27336,6 @@ __webpack_require__(214);
  */
 
 __webpack_require__(237);
-
-__webpack_require__(518);
 
 /***/ }),
 /* 214 */
@@ -66768,6 +66765,7 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__FavoriteMovieList__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__includes_Navbar__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__auth_Register__ = __webpack_require__(518);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -66775,6 +66773,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
 
 
 
@@ -66798,7 +66798,7 @@ var App = function (_Component) {
         'div',
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["a" /* BrowserRouter */],
+          __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["a" /* HashRouter */],
           null,
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
@@ -66808,7 +66808,8 @@ var App = function (_Component) {
               __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["d" /* Switch */],
               null,
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { exact: true, path: '/', component: __WEBPACK_IMPORTED_MODULE_1__containers_MovieResults_js__["a" /* default */] }),
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/fav', component: __WEBPACK_IMPORTED_MODULE_2__FavoriteMovieList__["a" /* default */] })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/fav', component: __WEBPACK_IMPORTED_MODULE_2__FavoriteMovieList__["a" /* default */] }),
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3_react_router_dom__["c" /* Route */], { path: '/register', component: __WEBPACK_IMPORTED_MODULE_5__auth_Register__["a" /* default */] })
             )
           )
         )
@@ -80076,7 +80077,7 @@ BrowserRouter.propTypes = {
 };
 
 
-/* harmony default export */ __webpack_exports__["a"] = (BrowserRouter);
+/* unused harmony default export */ var _unused_webpack_default_export = (BrowserRouter);
 
 /***/ }),
 /* 423 */
@@ -80455,7 +80456,7 @@ HashRouter.propTypes = {
 };
 
 
-/* unused harmony default export */ var _unused_webpack_default_export = (HashRouter);
+/* harmony default export */ __webpack_exports__["a"] = (HashRouter);
 
 /***/ }),
 /* 425 */
@@ -90677,17 +90678,19 @@ var addToFavorite = function addToFavorite() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__includes_Navbar__ = __webpack_require__(70);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_bootstrap__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_redux__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__registerServiceWorker__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_react_router_dom__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_react_redux__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery__ = __webpack_require__(54);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__registerServiceWorker__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_axios__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -90695,6 +90698,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -90723,16 +90727,66 @@ var Register = function (_Component) {
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Register.__proto__ || Object.getPrototypeOf(Register)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
       name: '',
       email: '',
-      password: ''
-    }, _this.handleSubmit = function (event) {}, _temp), _possibleConstructorReturn(_this, _ret);
+      password: '',
+      address: '',
+      city: '',
+      state: '',
+      zipcode: 0
+    }, _this.handleNameChange = function (event) {
+      _this.setState({
+        name: event.target.value
+      });
+    }, _this.handleEmailChange = function (event) {
+      _this.setState({
+        email: event.target.value
+      });
+    }, _this.handlePasswordChange = function (event) {
+      _this.setState({
+        password: event.target.value
+      });
+    }, _this.handleAddressChange = function (event) {
+      _this.setState({
+        address: event.target.value
+      });
+    }, _this.handleCityChange = function (event) {
+      _this.setState({
+        city: event.target.value
+      });
+    }, _this.handleStateChange = function (event) {
+      _this.setState({
+        state: event.target.value
+      });
+    }, _this.handleZipcodeChange = function (event) {
+      _this.setState({
+        zipcode: event.target.value });
+    }, _this.handleSubmit = function (event) {
+      event.preventDefault();
+
+      var user = {
+        name: _this.state.name,
+        email: _this.state.email,
+        password: _this.state.password,
+        address: _this.state.address,
+        city: _this.state.city,
+        state: _this.state.state,
+        zipcode: _this.state.zipcode
+      };
+      console.log(user.name);
+      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('/api/users', _this.state).then(function (res) {
+        console.log(res);
+        console.log(res.data);
+      }).catch(function (error) {
+        console.log(error.response);
+      });
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Register, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      __WEBPACK_IMPORTED_MODULE_5_jquery___default()(".input-button button").click(function (event) {
+      __WEBPACK_IMPORTED_MODULE_6_jquery___default()(".input-button button").click(function (event) {
 
-        __WEBPACK_IMPORTED_MODULE_5_jquery___default()(".form-wrapper").addClass("send");
+        __WEBPACK_IMPORTED_MODULE_6_jquery___default()(".form-wrapper").addClass("send");
 
         event.preventDefault();
       });
@@ -90756,16 +90810,16 @@ var Register = function (_Component) {
             'h4',
             null,
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'a',
-              { href: '/' },
+              __WEBPACK_IMPORTED_MODULE_4_react_router_dom__["b" /* NavLink */],
+              { to: '/' },
               '..Or head back ',
-              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { 'class': 'fas fa-arrow-left' })
+              __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fas fa-arrow-left' })
             )
           )
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'div',
-          { className: 'form-wrapper col-md-4 form-header' },
+          'form',
+          { className: 'form-wrapper col-md-4 form-header', onSubmit: this.handleSubmit },
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'h2',
             { className: 'form-title ' },
@@ -90789,17 +90843,21 @@ var Register = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-text' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label1', placeholder: 'Your name' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label1', placeholder: 'Name', name: 'name',
+              onChange: this.handleNameChange,
+              value: this.state.name }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
               { htmlFor: 'label1' },
-              'Your name'
+              'Name'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-text' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label2', placeholder: 'E-mail' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label2', placeholder: 'E-mail', name: 'email',
+              onChange: this.handleEmailChange,
+              value: this.state.email }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
               { htmlFor: 'label2' },
@@ -90809,41 +90867,61 @@ var Register = function (_Component) {
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-text' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label3', placeholder: 'Address' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label3', placeholder: 'Password', name: 'password',
+              onChange: this.handlePasswordChange,
+              value: this.state.password }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
               { htmlFor: 'label3' },
-              'Address'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'input-text' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label3', placeholder: 'State & Zip' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'label',
-              { htmlFor: 'label3' },
-              'State & Zip'
-            )
-          ),
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: 'input-text' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label4', placeholder: 'Password' }),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-              'label',
-              { htmlFor: 'label4' },
               'Password'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
             { className: 'input-text' },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label5', placeholder: 'Confirm Password' }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label4', placeholder: 'Address', name: 'address',
+              onChange: this.handleAddressChange,
+              value: this.state.address }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { htmlFor: 'label4' },
+              'Address'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'input-text' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label5', placeholder: 'City', name: 'city',
+              onChange: this.handleCityChange,
+              value: this.state.city }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'label',
               { htmlFor: 'label5' },
-              'Confirm Password'
+              'City'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'input-text' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label6', placeholder: 'State', name: 'state',
+              onChange: this.handleStateChange,
+              value: this.state.state }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { htmlFor: 'label6' },
+              'State'
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'div',
+            { className: 'input-text' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', id: 'label7', placeholder: 'Zipcode', name: 'zipcode',
+              onChange: this.handleZipcodeChange,
+              value: this.state.zipcode == 0 ? '' : this.state.zipcode }),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              'label',
+              { htmlFor: 'label7' },
+              'Zipcode'
             )
           ),
           __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -90851,7 +90929,7 @@ var Register = function (_Component) {
             { className: 'input-button' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               'button',
-              null,
+              { type: 'submit' },
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-paper-plane' })
             )
           )
@@ -90863,9 +90941,7 @@ var Register = function (_Component) {
   return Register;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-if (document.getElementById('register')) {
-  __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Register, null), document.getElementById('register')); // ?? Why brackets?
-}
+/* harmony default export */ __webpack_exports__["a"] = (Register);
 
 /***/ }),
 /* 519 */
