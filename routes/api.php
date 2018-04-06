@@ -18,3 +18,24 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('users', 'Api\UserController');
+
+Route::post('/users/login', 'Api\UserController@login'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
+// Route::post('/api/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
+// Route::post('/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
+Route::post('/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
+
+// Route::post('/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
+
+// Route::group(['prefix' => 'user'], function() { // === '/user' prefix
+//     Route::group(['middleware' => 'guest'], function() { // === Guest Middleware
+//         Route::get('/signup', 'UserController@getSignup')->name('signup');
+//         Route::post('/signup', 'UserController@postSignup');
+//
+//         Route::get('/signin', 'UserController@getSignin')->name('signin')->middleware('guest');
+//         Route::post('/signin', 'UserController@postSignin')->name('signin')->middleware('guest');
+//     });
+//         Route::group(['middleware' => 'auth'], function() { // === Guest Middleware
+//             Route::get('/profile', 'UserController@getProfile')->name('profile'); // == Auth Middleware
+//             Route::get('/logout', 'UserController@getLogout')->name('logout');
+//         });
+// });

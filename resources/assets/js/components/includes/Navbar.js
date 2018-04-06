@@ -28,7 +28,7 @@ class Navbar extends Component {
                   <li><NavLink to="/fav">Your Favs</NavLink></li>
                   <li><a href="javascript:void(0)" className="useraccount">User Account<span className="arrow-down"></span></a>
                     <ul className="dropdown">
-                      <li> <a href="">Login</a> </li>
+                      <li><NavLink to="/login">Login</NavLink></li>
                       <li> <a href="">Logout</a> </li>
                       <li> <a href="">Orders</a> </li>
                       <li><NavLink to="/register">Register</NavLink></li>

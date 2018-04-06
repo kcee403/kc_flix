@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Redirect, NavLink, Switch } from 'react-router-do
 import { HashRouter } from 'react-router-dom'
 import Navbar from './includes/Navbar';
 import Register from './auth/Register';
+import Login from './auth/Login';
 class App extends Component {
 
   render() {
@@ -17,8 +18,8 @@ class App extends Component {
 
                     <Route exact path='/' component={MovieResults} />
                     <Route path='/fav' component={FavoriteMovieList} />
-
-                    <Route path="/register" component={Register} />
+                    <Route path='/register' component={Register} />
+                    <Route path='/login' component={Login} />
               </Switch>
               </div>
             </HashRouter>

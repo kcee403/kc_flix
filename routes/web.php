@@ -15,4 +15,8 @@ Route::get('/', function () {
     return view('root');
 });
 
+Route::get('/token', function () {
+    return Auth::user()->createToken('MyApp');
+});
 Route::resource('users', 'UserController');
+Auth::routes();

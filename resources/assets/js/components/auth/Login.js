@@ -9,16 +9,12 @@ import $ from 'jquery';
 import registerServiceWorker from '../../registerServiceWorker';
 import axios from 'axios';
 
-class Register extends Component {
+class Login extends Component {
 
   state = {
     name: '',
     email: '',
     password: '',
-    address: '',
-    city: '',
-    state: '',
-    zipcode: 0
   }
 
   componentDidMount() {
@@ -27,7 +23,6 @@ class Register extends Component {
      $(".form-wrapper").addClass("send");
    });
   }
-
   handleNameChange = event => {
     this.setState({
       name: event.target.value,
@@ -43,25 +38,6 @@ class Register extends Component {
       password: event.target.value,
   });
   }
-  handleAddressChange = event => {
-    this.setState({
-      address: event.target.value,
- });
- }
-  handleCityChange = event => {
-    this.setState({
-      city: event.target.value,
- });
- }
-  handleStateChange = event => {
-    this.setState({
-      state: event.target.value,
-  });
-  }
-  handleZipcodeChange = event => {
-    this.setState({
-      zipcode: event.target.value });
-  }
 
   handleSubmit = event => {
     event.preventDefault();
@@ -70,13 +46,9 @@ class Register extends Component {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      address: this.state.address,
-      city: this.state.city,
-      state: this.state.state,
-      zipcode: this.state.zipcode
     };
           console.log(user.name);
-    axios.post('/api/users/register', this.state)
+    axios.post('/api/users/login', this.state)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -91,12 +63,15 @@ class Register extends Component {
 <div className="form-body ">
 
     <div className="col-md-3 form-side-header">
-        <h2 style={{color: 'white'}}>Sign Up to start watching your favorite films!</h2>
+        <h2 style={{color: 'white'}}>Login to start watching your favorite films!</h2>
         <h4>
-          <a href="/">..Or head back <i className="fas fa-arrow-left"></i></a></h4>
+
+            ..Or head back <i className="fas fa-arrow-left"></i>
+
+        </h4>
     </div>
     <form className="form-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
-        <h2 className="form-title ">Signup with <span className="kcflix">KC-FLIX</span></h2>
+        <h2 className="form-title ">Login to <span className="kcflix">KC-FLIX</span></h2>
 
         <div className="success">
           <i className="fa fa-check fa-3x"></i>
@@ -105,8 +80,8 @@ class Register extends Component {
 
         <div className="input-text">
           <input type="text" id="label1" placeholder="Name" name="name"
-            onChange={this.handleNameChange}
-            value={this.state.name} />
+          onChange={this.handleNameChange}
+          value={this.state.name} />
           <label htmlFor="label1">Name</label>
         </div>
 
@@ -124,34 +99,6 @@ class Register extends Component {
           <label htmlFor="label3">Password</label>
         </div>
 
-        <div className="input-text">
-          <input type="text" id="label4" placeholder="Address" name="address"
-          onChange={this.handleAddressChange}
-          value={this.state.address} />
-          <label htmlFor="label4">Address</label>
-        </div>
-
-        <div className="input-text">
-          <input type="text" id="label5" placeholder="City" name="city"
-          onChange={this.handleCityChange}
-          value={this.state.city} />
-          <label htmlFor="label5">City</label>
-        </div>
-
-        <div className="input-text">
-          <input type="text" id="label6" placeholder="State" name="state"
-          onChange={this.handleStateChange}
-          value={this.state.state} />
-          <label htmlFor="label6">State</label>
-        </div>
-
-        <div className="input-text">
-          <input type="text" id="label7" placeholder="Zipcode" name="zipcode"
-          onChange={this.handleZipcodeChange}
-          value={this.state.zipcode==0 ? '' : this.state.zipcode} />
-          <label htmlFor="label7">Zipcode</label>
-        </div>
-
         <div className="input-button">
           <button type="submit"><i className="fa fa-paper-plane"></i></button>
         </div>
@@ -160,4 +107,4 @@ class Register extends Component {
 </div>
     );
   }
-} export default Register;
+} export default Login;
