@@ -1,4 +1,8 @@
-.card-body .btn {
+.btn-primary {
+  @include mediaQ('large') {
+    border-color: white !important;
+  }
+}.card-body .btn {
   margin-left: 10px;
 
   right: 4%;

@@ -15,13 +15,18 @@ html,body {
   @extend %overlayDefault;
 	height: 100%;
 	width: 100%;
+	@include mediaQ('extraSmall') {
+		margin-top: 20px;
+	}
+
 }
 .form-side-header {
 	text-align: left;
 	position: fixed;
 	color: white !important;
-	margin-top: 10px;
+	margin-top: 50px;
 	font-family: 'Nunito';
+
 	@include mediaQ('large') {
 		margin-top: 280px;
 
@@ -56,6 +61,7 @@ html,body {
 	border-radius: 3px;
 	box-shadow: 0 0 9px rgba(0,0,0,0.6);
 	padding: 53px 30px !important;
+	margin-top: 30px;
   @include mediaQ('medium') {
   	padding: 70px 60px;
 		top: 50%;
@@ -91,7 +97,10 @@ html,body {
 }
 .input-text {
 	display: block;
-	margin-bottom: 20px;
+	margin-bottom: -13px;
+	@include mediaQ('small') {
+		margin-bottom: 10px;
+	}
 }
 .input-text label {
 	display: block;

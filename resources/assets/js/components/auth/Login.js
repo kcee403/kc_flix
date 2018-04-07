@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Navbar from '../includes/Navbar';
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
-
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import $ from 'jquery';
 import registerServiceWorker from '../../registerServiceWorker';
@@ -50,8 +50,13 @@ class Login extends Component {
           console.log(user.name);
     axios.post('/api/users/login', this.state)
       .then(res => {
+        console.log("Response is:");
         console.log(res);
+        console.log("SuccessStatus is: ");
         console.log(res.data);
+        console.log("Refresh Token is: ");
+        console.log(res.data.accessToken);
+
       }).catch(error => {
     console.log(error.response)
 });
@@ -65,9 +70,7 @@ class Login extends Component {
     <div className="col-md-3 form-side-header">
         <h2 style={{color: 'white'}}>Login to start watching your favorite films!</h2>
         <h4>
-
-            ..Or head back <i className="fas fa-arrow-left"></i>
-
+            ..Or head back <NavLink to="/"><i className="fas fa-arrow-left"></i> </NavLink>
         </h4>
     </div>
     <form className="form-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>

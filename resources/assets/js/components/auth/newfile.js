@@ -326,3 +326,28 @@ class Register extends Component {
     );
   }
 } export default Register;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const AuthRoute = ({ component: Component, ...rest }) => (
+  <Route {...rest} render={props => (
+    checkAuth() ? (
+      <Component {...props} />
+    ) : (
+        <Redirect to={{ pathname: '/login'}} />
+    )
+  )} />
+)
