@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import MovieResults from '../containers/MovieResults.js';
 import FavoriteMovieList from './FavoriteMovieList';
-import { BrowserRouter, Route, Redirect, NavLink, Switch } from 'react-router-dom';
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect, NavLink, Switch, HashRouter } from 'react-router-dom';
 import Navbar from './includes/Navbar';
 import Register from './auth/Register';
 import Login from './auth/Login';
 import decode from 'jwt-decode';
+
 
 const CheckAuth = () => {
   const token = localStorage.getItem('token');
@@ -29,7 +29,7 @@ const CheckAuth = () => {
           return false;
   }
 
-  return false;
+  return true;
 }
 const AuthRoute = ({ component: Component, ...rest }) => (
   <Route {...rest}
@@ -40,22 +40,20 @@ const AuthRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends Component {
-
   render() {
     return (
           <div>
-            <BrowserRouter>
+            <HashRouter>
             <div>
             <Navbar showSearch={true} />
               <Switch>
                     <Route exact path='/' component={MovieResults} />
-
                     <Route path='/register' component={Register} />
                     <Route path='/login' component={Login} />
                     <AuthRoute path='/fav' component={FavoriteMovieList} />
               </Switch>
               </div>
-            </BrowserRouter>
+            </HashRouter>
           </div>
           );
   }

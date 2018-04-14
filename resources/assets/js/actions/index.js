@@ -9,15 +9,24 @@ export function requestMovies(items) { // movies gives the passed value/object a
 }
 
 export function addToFavorite(movieFavorited) { //
-  return {
+  const action = {
     type: actionTypes.ADD_FAV,
     movieFavorited,
   }
+  return action;
 }
 
 export function removeFromFavorite(movie) {
-  return {
+  const action = {
     type: actionTypes.REMOVE_FAV,
     movie
   }
+  return action;
+}
+
+export const logout = () => {
+  const action = {
+    type: actionTypes.LOGOUT,
+  }
+  return action;
 }

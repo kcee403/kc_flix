@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
 import Navbar from '../includes/Navbar';
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect, BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import $ from 'jquery';
 import registerServiceWorker from '../../registerServiceWorker';
 import axios from 'axios';
+import {logout} from './functions/AuthFunctions';
 
 class Login extends Component {
 
@@ -15,6 +15,7 @@ class Login extends Component {
     name: '',
     email: '',
     password: '',
+    loggedin: false
   }
 
   componentDidMount() {
@@ -39,6 +40,18 @@ class Login extends Component {
   });
   }
 
+  UpdateRouter = () => {
+          <BrowserRouter>
+          <Redirect exact to="/" render={() => (
+            this.state.loggedin ? (
+              <MovieResults />
+            ) : (
+              <MovieResults />
+            )
+          )} />
+          </BrowserRouter>;
+}
+
   handleSubmit = event => {
     event.preventDefault();
 
@@ -47,26 +60,28 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-          console.log(user.name);
+          console.log( "User Name is: " + user.name);
     axios.post('/api/users/login', this.state)
       .then(res => {
-        console.log("Response is:");
-        console.log(res);
-        console.log("SuccessStatus is: ");
-        console.log(res.data);
-        console.log("Refresh Token is: ");
-        console.log(res.data.accessToken);
-
+        console.log("Response is: ", res);
+        console.log("SuccessStatus is: ", res.data);
+        localStorage.setItem('token', res.data.success.token.accessToken);
+        let token = localStorage.getItem('token');
+        console.log(token);
       }).catch(error => {
-    console.log(error.response)
+    console.log(error.response);
 });
   }
 
   render() {
 
+    let authRedirect = null;
+    if(this.props.isAuthenticated) {
+      authRedirect = <Redirect to="/" />
+    }
     return (
 <div className="form-body ">
-
+    {authRedirect}
     <div className="col-md-3 form-side-header">
         <h2 style={{color: 'white'}}>Login to start watching your favorite films!</h2>
         <h4>
@@ -103,10 +118,15 @@ class Login extends Component {
         </div>
 
         <div className="input-button">
-          <button type="submit"><i className="fa fa-paper-plane"></i></button>
+          <button onClick={this.UpdateRouter()} type="submit"><i className="fa fa-paper-plane"></i></button>
         </div>
 
     </form>
+
+    <div className="">
+      <button onClick={ () => {logout()} } className="btn btn-default"><i className=""></i>LOGOUT</button>
+    </div>
+
 </div>
     );
   }
