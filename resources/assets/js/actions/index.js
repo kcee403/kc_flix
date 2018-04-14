@@ -30,3 +30,9 @@ export const logout = () => {
   }
   return action;
 }
+export const login = () => {
+  const action = {
+    type: actionTypes.LOGIN,
+  }
+  return action;
+}

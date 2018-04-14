@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import $ from 'jquery';
 import registerServiceWorker from '../../registerServiceWorker';
 import axios from 'axios';
-import {logout} from './functions/AuthFunctions';
+import {login, logout} from '../../actions';
 
 class Login extends Component {
 
@@ -39,18 +39,6 @@ class Login extends Component {
       password: event.target.value,
   });
   }
-
-  UpdateRouter = () => {
-          <BrowserRouter>
-          <Redirect exact to="/" render={() => (
-            this.state.loggedin ? (
-              <MovieResults />
-            ) : (
-              <MovieResults />
-            )
-          )} />
-          </BrowserRouter>;
-}
 
   handleSubmit = event => {
     event.preventDefault();
@@ -118,7 +106,7 @@ class Login extends Component {
         </div>
 
         <div className="input-button">
-          <button onClick={this.UpdateRouter()} type="submit"><i className="fa fa-paper-plane"></i></button>
+          <button type="submit" onClick={ () => {login()} }><i className="fa fa-paper-plane"></i></button>
         </div>
 
     </form>
@@ -130,4 +118,4 @@ class Login extends Component {
 </div>
     );
   }
-} export default Login;
+} export default connect(null, { login, logout } )(Login);

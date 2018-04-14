@@ -6,7 +6,7 @@ import Navbar from './includes/Navbar';
 import Register from './auth/Register';
 import Login from './auth/Login';
 import decode from 'jwt-decode';
-
+import {connect} from 'react-redux';
 
 const CheckAuth = () => {
   const token = localStorage.getItem('token');
@@ -58,4 +58,12 @@ class App extends Component {
           );
   }
 }
-export default App;
+
+function mapStateToProps(state) {
+  console.log("isAuthenticated state is: ", state);
+  return {
+      isAuthenticated: state.auth.isAuthenticated
+  }
+}
+
+export default connect(mapStateToProps, null)(App);

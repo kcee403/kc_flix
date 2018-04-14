@@ -1,7 +1,6 @@
-
 import * as actionTypes from '../actions/actionTypes';
 const initialState = {
-  loggedin: false,
+  isAuthenticated: false,
 }
 
 const logout = (state = initialState, action) => {
@@ -11,10 +10,19 @@ const logout = (state = initialState, action) => {
 
       return {
         ...state,
-        isLoggedin: !isLoggedIn,
+        isAuthenticated: false,
+      }
+    case actionTypes.LOGIN:
+      console.log("LOGIN REDUCER! ");
+
+      return {
+        ...state,
+        isAuthenticated: true,
       }
 
     default:
     return state;
   }
 }
+
+export default logout;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, NavLink, Switch } from 'react-router-dom';
 import Search from '../Search';
 import $ from 'jquery';
+import {logout} from '../auth/functions/AuthFunctions';
 
 class Navbar extends Component {
   componentDidMount() {
@@ -29,7 +30,7 @@ class Navbar extends Component {
                   <li><a href="javascript:void(0)" className="useraccount">User Account<span className="arrow-down"></span></a>
                     <ul className="dropdown">
                       <li><NavLink to="/login">Login</NavLink></li>
-                      <li> <a href="">Logout</a> </li>
+                      <li> <a href="" onClick={ () => {logout()}}>Logout</a> </li>
                       <li> <a href="">Orders</a> </li>
                       <li><NavLink to="/register">Register</NavLink></li>
                     </ul>
