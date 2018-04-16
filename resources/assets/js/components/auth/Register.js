@@ -93,10 +93,13 @@ class Register extends Component {
     <div className="col-md-3 form-side-header">
         <h2 style={{color: 'white'}}>Sign Up to start watching your favorite films!</h2>
         <h4>
-            ..Or head back <NavLink to="/"><i className="fas fa-arrow-left"></i> </NavLink> 
+            Already Registered? <NavLink to="/login"> <strong>Login here..</strong> </NavLink>
+        </h4>
+        <h4>
+            ..Or head <NavLink to="/"> <strong>back</strong> <i className="fas fa-arrow-left"></i> </NavLink>
         </h4>
     </div>
-    <form className="form-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
+    <form className="form-wrapper register-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
         <h2 className="form-title ">Signup with <span className="kcflix">KC-FLIX</span></h2>
 
         <div className="success">

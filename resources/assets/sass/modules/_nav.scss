@@ -120,6 +120,7 @@
   color: #fff;
   display: block;
   font-weight: 400;
+
 }
 
 .nav-fostrap li ul.dropdown li:last-child a { border-bottom: none; }
@@ -153,7 +154,7 @@
   font-family: 'Permanent Marker', cursive;
   &:hover {
     color: white;
-
+    background-color: transparent;
   }
 }
  @media only screen and (max-width:820px) {

@@ -32,9 +32,16 @@ $boxShadow1: 0 4px 5px 0 rgba(0, 0, 0, 0.26);
 $boxHover1: 0px 3px 5 rgba(0, 0, 0, 0.4);
 //=====Media Queries======
 $breakPoint:(
-'extraLarge': 1195px,
+'extraLarge': 992px,
 'large': 820px,
 'medium': 607px,
 'small': 440px,
 'extraSmall': 380px,
 );
+// $breakPoint:(
+// 'extraLarge': 992px,
+// 'large': 1200px,
+// 'medium': 992px,
+// 'small': 768px,
+// 'extraSmall': 768px,
+// );

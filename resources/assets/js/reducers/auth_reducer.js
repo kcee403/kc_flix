@@ -3,11 +3,11 @@ const initialState = {
   isAuthenticated: false,
 }
 
-const logout = (state = initialState, action) => {
+const authenticate = (state = initialState, action) => {
   switch(action.type) {
     case actionTypes.LOGOUT:
       console.log("LOGOUT REDUCER! ");
-
+      localStorage.removeItem('token');
       return {
         ...state,
         isAuthenticated: false,
@@ -25,4 +25,4 @@ const logout = (state = initialState, action) => {
   }
 }
 
-export default logout;
+export default authenticate;

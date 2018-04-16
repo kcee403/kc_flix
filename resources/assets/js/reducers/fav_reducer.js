@@ -5,7 +5,7 @@ const initialState = {
   favorites: []
 };
 
-const addToFavorite = (state = initialState, action) => {
+const favorited = (state = initialState, action) => {
    switch (action.type) {
      case ADD_FAV:
       console.log("Movie added to favorites", action.movieFavorited);
@@ -25,4 +25,4 @@ const addToFavorite = (state = initialState, action) => {
     }
    }
 
-export default addToFavorite;
+export default favorited;

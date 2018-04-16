@@ -55,6 +55,7 @@ class Login extends Component {
         console.log("SuccessStatus is: ", res.data);
         localStorage.setItem('token', res.data.success.token.accessToken);
         let token = localStorage.getItem('token');
+        token ? (this.props.login()) : null;
         console.log(token);
       }).catch(error => {
     console.log(error.response);
@@ -68,54 +69,62 @@ class Login extends Component {
       authRedirect = <Redirect to="/" />
     }
     return (
-<div className="form-body ">
-    {authRedirect}
-    <div className="col-md-3 form-side-header">
-        <h2 style={{color: 'white'}}>Login to start watching your favorite films!</h2>
-        <h4>
-            ..Or head back <NavLink to="/"><i className="fas fa-arrow-left"></i> </NavLink>
-        </h4>
+    <div className="form-body ">
+        {authRedirect}
+        <div className="col-md-3 form-side-header">
+            <h2 style={{color: 'white'}}>Login to start watching your favorite films!</h2>
+            <h4>
+              Not registered, <NavLink to="/register"><strong>Sign Up</strong> with us.. </NavLink>
+            </h4>
+            <h4>
+                ..Or head<NavLink to="/"><strong> back</strong> <i className="fas fa-arrow-left"></i> </NavLink>
+            </h4>
+        </div>
+        <form className="form-wrapper login-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
+            <h2 className="form-title ">Login to <span className="kcflix">KC-FLIX</span></h2>
+
+            <div className="success">
+              <i className="fa fa-check fa-3x"></i>
+              <h1>Thank you for subscribing</h1>
+            </div>
+
+            <div className="input-text">
+              <input type="text" id="label1" placeholder="Name" name="name"
+              onChange={this.handleNameChange}
+              value={this.state.name} />
+              <label htmlFor="label1">Name</label>
+            </div>
+
+            <div className="input-text">
+              <input type="text" id="label2" placeholder="E-mail" name="email"
+              onChange={this.handleEmailChange}
+              value={this.state.email} />
+              <label htmlFor="label2">E-mail</label>
+            </div>
+
+            <div className="input-text">
+              <input type="text" id="label3" placeholder="Password" name="password"
+              onChange={this.handlePasswordChange}
+              value={this.state.password} />
+              <label htmlFor="label3">Password</label>
+            </div>
+
+            <div className="input-button">
+              <button type="submit"><i className="fa fa-paper-plane"></i></button>
+            </div>
+
+        </form>
+
     </div>
-    <form className="form-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
-        <h2 className="form-title ">Login to <span className="kcflix">KC-FLIX</span></h2>
-
-        <div className="success">
-          <i className="fa fa-check fa-3x"></i>
-          <h1>Thank you for subscribing</h1>
-        </div>
-
-        <div className="input-text">
-          <input type="text" id="label1" placeholder="Name" name="name"
-          onChange={this.handleNameChange}
-          value={this.state.name} />
-          <label htmlFor="label1">Name</label>
-        </div>
-
-        <div className="input-text">
-          <input type="text" id="label2" placeholder="E-mail" name="email"
-          onChange={this.handleEmailChange}
-          value={this.state.email} />
-          <label htmlFor="label2">E-mail</label>
-        </div>
-
-        <div className="input-text">
-          <input type="text" id="label3" placeholder="Password" name="password"
-          onChange={this.handlePasswordChange}
-          value={this.state.password} />
-          <label htmlFor="label3">Password</label>
-        </div>
-
-        <div className="input-button">
-          <button type="submit" onClick={ () => {login()} }><i className="fa fa-paper-plane"></i></button>
-        </div>
-
-    </form>
-
-    <div className="">
-      <button onClick={ () => {logout()} } className="btn btn-default"><i className=""></i>LOGOUT</button>
-    </div>
-
-</div>
     );
   }
-} export default connect(null, { login, logout } )(Login);
+}
+
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    isAuthenticated: state.auth.isAuthenticated, // === GLOBAL STATE from the store prop = { store }
+  }
+}
+
+export default connect(mapStateToProps, { login, logout } )(Login);

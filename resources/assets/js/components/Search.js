@@ -17,7 +17,9 @@ class Search extends Component {
     fetch(url, {
       method: 'GET',
     }).then(response=> response.json())
-    .then(jsObj => {this.props.requestMovies(jsObj.results)}); //== HERE movies becomes the prop of SEARCH.js
+    .then(jsObj => {this.props.requestMovies(jsObj.results);
+        console.log(jsObj);
+    }); //== HERE movies becomes the prop of SEARCH.js
   }
   handleSubmit = event => {
     if(this.state.query == 'f') {
