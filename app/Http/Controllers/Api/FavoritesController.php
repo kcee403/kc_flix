@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -44,7 +44,7 @@ class FavoritesController extends Controller
 
       $favorites->save();
 
-      return response()->json($user);
+
     }
 
     /**

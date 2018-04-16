@@ -24,6 +24,9 @@ Route::post('/users/login', 'Api\UserController@login'); // WHEN YOUR API USES A
 // Route::post('/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
 Route::post('/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
 
+Route::resource('favorites', 'Api\FavoritesController');
+// Route::post('/favorites/store', 'Api\Favorites@store');
+
 // Route::post('/users/register', 'Api\UserController@register'); // WHEN YOUR API USES A POST METHOD IN THE AJAX/AXIOS-REQUEST
 
 // Route::group(['prefix' => 'user'], function() { // === '/user' prefix
