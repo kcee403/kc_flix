@@ -8,10 +8,35 @@ export function addToFavorite(movieFavorited) { //
   return action;
 }
 
-export function removeFromFavorite(movie) {
+export function removeFromFavorite(movieRemoved) {
   const action = {
     type: actionTypes.REMOVE_FAV,
-    movie
+    movieRemoved
   }
   return action;
 }
+
+export function postToFavorite(movieTitle, movieId) {
+  const favorited = {
+    title: movieTitle,
+    id: movieId
+  }
+      axios.post( '/api/favorites', favorited)
+            .then( response => {
+              console.log(error.response);
+            });
+}
+
+export const purchaseBurger = ( orderData, token ) => {
+    return dispatch => {
+        dispatch( purchaseBurgerStart() );
+        axios.post( '/orders.json?auth=' + token, orderData )
+            .then( response => {
+                console.log( response.data );
+                dispatch( purchaseBurgerSuccess( response.data.name, orderData ) );
+            } )
+            .catch( error => {
+                dispatch( purchaseBurgerFail( error ) );
+            } );
+    };
+};

@@ -9,5 +9,6 @@ export {
 } from './movies';
 export {
     addToFavorite,
-    removeFromFavorite
+    removeFromFavorite,
+    postToFavorite
 } from './favorites';

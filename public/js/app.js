@@ -14576,9 +14576,10 @@ module.exports = exports['default'];
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return __WEBPACK_IMPORTED_MODULE_1__auth__["b"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_1__auth__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__movies__ = __webpack_require__(533);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_2__movies__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_2__movies__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__favorites__ = __webpack_require__(534);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__favorites__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__favorites__["c"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__favorites__["b"]; });
 
 
@@ -21775,7 +21776,7 @@ __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
   { className: 'title-mobile', to: '/' },
   'KC FLIX'
 );
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_5_react_redux__["b" /* connect */])(null, { requestMovies: __WEBPACK_IMPORTED_MODULE_4__actions__["e" /* requestMovies */] })(Search)); // ?? Why brackets?
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_5_react_redux__["b" /* connect */])(null, { requestMovies: __WEBPACK_IMPORTED_MODULE_4__actions__["f" /* requestMovies */] })(Search)); // ?? Why brackets?
 
 /***/ }),
 /* 142 */
@@ -26640,13 +26641,22 @@ var MovieItem = function (_Component) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = MovieItem.__proto__ || Object.getPrototypeOf(MovieItem)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-      isFavorited: false
-
+      isFavorited: false,
+      movieTitle: _this.props.movie.title,
+      movieId: _this.props.movie.id
     }, _this.style = {
       padding: '0px'
     }, _this.addToFavorite = function () {
+      var favorited = {
+        title: _this.state.movieTitle,
+        id: _this.state.movieId
+      };
       _this.setState({ isFavorited: !_this.state.isFavorited });
       _this.props.addToFavorite(_this.props.movie);
+      axios.post('/api/favorites', favorited).then(function (response) {}).catch(function (error) {
+        console.log(error.response.data.message);
+        console.log("The favorited variable is: ", favorited);
+      });
     }, _this.removeFromFavorite = function () {
       _this.setState({ isFavorited: !_this.state.isFavorited });
       _this.props.removeFromFavorite(_this.props.movie);
@@ -26727,7 +26737,7 @@ var MovieItem = function (_Component) {
   return MovieItem;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
-/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["b" /* connect */])(null, { addToFavorite: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* addToFavorite */], removeFromFavorite: __WEBPACK_IMPORTED_MODULE_2__actions__["d" /* removeFromFavorite */] })(MovieItem));
+/* harmony default export */ __webpack_exports__["a"] = (Object(__WEBPACK_IMPORTED_MODULE_3_react_redux__["b" /* connect */])(null, { addToFavorite: __WEBPACK_IMPORTED_MODULE_2__actions__["a" /* addToFavorite */], removeFromFavorite: __WEBPACK_IMPORTED_MODULE_2__actions__["e" /* removeFromFavorite */], postToFavorite: __WEBPACK_IMPORTED_MODULE_2__actions__["d" /* postToFavorite */] })(MovieItem));
 
 /***/ }),
 /* 197 */
@@ -83078,6 +83088,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_react_redux__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_redux__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__reducers__ = __webpack_require__(523);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_redux_thunk__ = __webpack_require__(535);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_redux_thunk__);
 
 
 
@@ -83091,19 +83103,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var logger = function logger(store) {
-  return function (next) {
-    return function (action) {
-      console.log('[Middleware] Dispatching', action);
-      var result = next(action);
-      console.log('[Middleware] next state', store.getState());
-      return result;
-    };
-  };
-};
+
 
 var composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || __WEBPACK_IMPORTED_MODULE_8_redux__["d" /* compose */];
-var store = Object(__WEBPACK_IMPORTED_MODULE_8_redux__["e" /* createStore */])(__WEBPACK_IMPORTED_MODULE_9__reducers__["a" /* default */], composeEnhancers(Object(__WEBPACK_IMPORTED_MODULE_8_redux__["a" /* applyMiddleware */])(logger)));
+
+var store = Object(__WEBPACK_IMPORTED_MODULE_8_redux__["e" /* createStore */])(__WEBPACK_IMPORTED_MODULE_9__reducers__["a" /* default */], composeEnhancers(Object(__WEBPACK_IMPORTED_MODULE_8_redux__["a" /* applyMiddleware */])(__WEBPACK_IMPORTED_MODULE_10_redux_thunk___default.a)));
 
 if (document.getElementById('root')) {
   __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -91030,7 +91034,7 @@ var Register = function (_Component) {
         zipcode: _this.state.zipcode
       };
       console.log(user.name);
-      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('/api/users/register', _this.state).then(function (res) {
+      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('/api/users/register', user).then(function (res) {
         console.log(res);
         console.log(res.data);
       }).catch(function (error) {
@@ -91524,7 +91528,9 @@ function requestMovies(items) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = addToFavorite;
-/* harmony export (immutable) */ __webpack_exports__["b"] = removeFromFavorite;
+/* harmony export (immutable) */ __webpack_exports__["c"] = removeFromFavorite;
+/* harmony export (immutable) */ __webpack_exports__["b"] = postToFavorite;
+/* unused harmony export purchaseBurger */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__actionTypes_js__ = __webpack_require__(56);
 
 
@@ -91537,13 +91543,64 @@ function addToFavorite(movieFavorited) {
   return action;
 }
 
-function removeFromFavorite(movie) {
+function removeFromFavorite(movieRemoved) {
   var action = {
     type: __WEBPACK_IMPORTED_MODULE_0__actionTypes_js__["e" /* REMOVE_FAV */],
-    movie: movie
+    movieRemoved: movieRemoved
   };
   return action;
 }
+
+function postToFavorite(movieTitle, movieId) {
+  var favorited = {
+    title: movieTitle,
+    id: movieId
+  };
+  axios.post('/api/favorites', favorited).then(function (response) {
+    console.log(error.response);
+  });
+}
+
+var purchaseBurger = function purchaseBurger(orderData, token) {
+  return function (dispatch) {
+    dispatch(purchaseBurgerStart());
+    axios.post('/orders.json?auth=' + token, orderData).then(function (response) {
+      console.log(response.data);
+      dispatch(purchaseBurgerSuccess(response.data.name, orderData));
+    }).catch(function (error) {
+      dispatch(purchaseBurgerFail(error));
+    });
+  };
+};
+
+/***/ }),
+/* 535 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+function createThunkMiddleware(extraArgument) {
+  return function (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return action(dispatch, getState, extraArgument);
+        }
+
+        return next(action);
+      };
+    };
+  };
+}
+
+var thunk = createThunkMiddleware();
+thunk.withExtraArgument = createThunkMiddleware;
+
+exports['default'] = thunk;
 
 /***/ })
 /******/ ]);

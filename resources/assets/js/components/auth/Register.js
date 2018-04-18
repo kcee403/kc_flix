@@ -76,7 +76,7 @@ class Register extends Component {
       zipcode: this.state.zipcode
     };
           console.log(user.name);
-    axios.post('/api/users/register', this.state)
+    axios.post('/api/users/register', user)
       .then(res => {
         console.log(res);
         console.log(res.data);

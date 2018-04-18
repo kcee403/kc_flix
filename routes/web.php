@@ -19,4 +19,13 @@ Route::get('/token', function () {
     return Auth::user()->createToken('MyApp');
 });
 Route::resource('users', 'UserController');
+
+// Route::post('favorites', ['as' => 'favorites.store', function() 
+// {
+//     Auth::user()->favorites()->attach(Input::get('post-id'));
+// }]);
+
 Auth::routes();
+
+// Route::post('/favorites/store', 'FavoritesController@store');
+// Route::get('/favorites/', 'FavoritesController@store');

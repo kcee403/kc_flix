@@ -39,12 +39,12 @@ class FavoritesController extends Controller
     public function store(Request $request)
     {
       $favorites = new Favorite;
-      $favorites->movieName = $request->input('movieName');
-      $favorites->movieId = $request->input('movieId');
+      $favorites->movie_name = $request->input('movieTitle');
+      $favorites->movie_id = $request->input('movieId');
 
       $favorites->save();
 
-
+      return response()->json($user); // This returns json, and you go directly
     }
 
     /**

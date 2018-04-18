@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import StarRatingComponent from 'react-star-rating-component';
 
-import {addToFavorite, removeFromFavorite} from '../actions';
+import {addToFavorite, removeFromFavorite, postToFavorite} from '../actions';
 import {connect} from 'react-redux';
 import { Rating } from 'material-ui-rating';
 import NO_IMAGES from '../images/no_image.jpg';
@@ -11,15 +11,27 @@ const movieUrl = "https://www.themoviedb.org/movie/";
 class MovieItem extends Component {
   state = {
     isFavorited: false,
-
+    movieTitle: this.props.movie.title,
+    movieId: this.props.movie.id
   }
   style = {
     padding: '0px'
   }
 
 addToFavorite = () => {
+  const favorited = {
+    title: this.state.movieTitle,
+    id: this.state.movieId
+  }
   this.setState({isFavorited: !this.state.isFavorited});
   this.props.addToFavorite(this.props.movie);
+  axios.post( '/api/favorites', favorited)
+        .then( response => {
+        }).catch(error => {
+      console.log(error.response.data.message);
+      console.log("The favorited variable is: ", favorited);
+  });
+
 }
   removeFromFavorite = () => {
     this.setState({isFavorited: !this.state.isFavorited});
@@ -67,4 +79,4 @@ addToFavorite = () => {
     )
   }
 }
-export default connect(null, { addToFavorite, removeFromFavorite } )(MovieItem);
+export default connect(null, { addToFavorite, removeFromFavorite, postToFavorite } )(MovieItem);
