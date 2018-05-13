@@ -29,6 +29,7 @@
     "react-dom": "^16.2.0"
   },
   "dependencies": {
+    "build": "^0.1.4",
     "email-existence": "^0.1.6",
     "gulp-powerbi-package-validator": "^1.0.1",
     "jwt-decode": "^2.2.0",

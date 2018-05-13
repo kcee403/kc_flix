@@ -29,22 +29,24 @@ class FavoritesController extends Controller
     {
       //
     }
-
+  
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($id)
     {
       $favorites = new Favorite;
-      $favorites->movie_name = $request->input('movieTitle');
-      $favorites->movie_id = $request->input('movieId');
 
+      $favorites::create([
+        'user_id' => Auth::users()->id,
+        'movie_id' => $id,
+      ]);
       $favorites->save();
 
-      return response()->json($user); // This returns json, and you go directly
+      return response()->json($favorites); // This returns json, and you go directly
     }
 
     /**

@@ -49,7 +49,7 @@ class Login extends Component {
       password: this.state.password,
     };
           console.log( "User Name is: " + user.name);
-    axios.post('/api/users/login', this.state)
+    axios.post('/api/users/login', user)
       .then(res => {
         console.log("Response is: ", res);
         console.log("SuccessStatus is: ", res.data);
@@ -57,6 +57,12 @@ class Login extends Component {
         let token = localStorage.getItem('token');
         token ? (this.props.login()) : null;
         console.log(token);
+          if(token) {
+              $(".input-button button").click(function(event) {
+
+                  $(".form-wrapper").addClass("send");
+              });
+          }
       }).catch(error => {
     console.log(error.response);
 });
@@ -82,11 +88,6 @@ class Login extends Component {
         </div>
         <form className="form-wrapper login-wrapper col-md-4 form-header" onSubmit={this.handleSubmit}>
             <h2 className="form-title ">Login to <span className="kcflix">KC-FLIX</span></h2>
-
-            <div className="success">
-              <i className="fa fa-check fa-3x"></i>
-              <h1>Thank you for subscribing</h1>
-            </div>
 
             <div className="input-text">
               <input type="text" id="label1" placeholder="Name" name="name"

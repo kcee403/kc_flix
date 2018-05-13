@@ -23,7 +23,7 @@ class UserController extends Controller
         return response()->json($users);
     }
 
-
+ 
     public function login(Request $request) {
         $credentials = [
            'email' => $request['email'],  // grab 'email' and 'password' from $request[] object

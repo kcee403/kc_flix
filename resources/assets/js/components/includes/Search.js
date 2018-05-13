@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import { Form, FormControl, FormGroup, ControlLabel, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { API_KEY } from '../secrets.js';
-import { requestMovies } from '../actions';
+import { API_KEY } from '../../secrets.js';
+import { requestMovies } from '../../actions';
 import { connect } from 'react-redux';
 
 class Search extends Component {

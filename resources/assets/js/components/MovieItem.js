@@ -4,6 +4,7 @@ import StarRatingComponent from 'react-star-rating-component';
 import {addToFavorite, removeFromFavorite, postToFavorite} from '../actions';
 import {connect} from 'react-redux';
 import { Rating } from 'material-ui-rating';
+import { NavLink } from 'react-router-dom';
 import NO_IMAGES from '../images/no_image.jpg';
 const urlComponent = "https://image.tmdb.org/t/p/w342";
 const movieUrl = "https://www.themoviedb.org/movie/";
@@ -11,25 +12,23 @@ const movieUrl = "https://www.themoviedb.org/movie/";
 class MovieItem extends Component {
   state = {
     isFavorited: false,
-    movieTitle: this.props.movie.title,
-    movieId: this.props.movie.id
   }
   style = {
     padding: '0px'
   }
 
 addToFavorite = () => {
-  const favorited = {
-    title: this.state.movieTitle,
-    id: this.state.movieId
+  let favorited = {
+    movie_title: this.props.movie.title,
+    movie_id: this.props.movie.id
   }
   this.setState({isFavorited: !this.state.isFavorited});
   this.props.addToFavorite(this.props.movie);
-  axios.post( '/api/favorites', favorited)
+  axios.post( '/api/favorites/' + favorited.movie_id)
         .then( response => {
         }).catch(error => {
       console.log(error.response.data.message);
-      console.log("The favorited variable is: ", favorited);
+      console.log("The favorited movie_id variable is: ", favorited.movie_id);
   });
 
 }
@@ -70,9 +69,9 @@ addToFavorite = () => {
             <hr />
           </span>
           <span>{this.props.showButton ? this.displayFav() : null}</span>
-          <a href="#" className="btn btn-primary">
-           <i className="fas fa-info"></i>
-          </a>
+
+
+
         </div>
       </ul>
     </div>

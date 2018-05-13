@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+ 
 use Illuminate\Database\Eloquent\Model;
 
 class Favorite extends Model
@@ -10,6 +10,6 @@ class Favorite extends Model
       return $this->belongsTo('App\User');
     }
     protected $fillable = [
-        'user_id', 'movie_name', 'movie_id'
+       'movie_id'
     ];
 }

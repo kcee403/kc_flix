@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Search from '../components/Search';
+import Search from '../components/includes/Search';
 import Navbar from '../components/includes/Navbar';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';

@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Redirect, NavLink, Switch, HashRouter } from 'rea
 import Navbar from './includes/Navbar';
 import Register from './auth/Register';
 import Login from './auth/Login';
+import MovieInfo from './MovieInfo';
 import decode from 'jwt-decode';
 import {connect} from 'react-redux';
 
@@ -50,6 +51,7 @@ class App extends Component {
                     <Route exact path='/' component={MovieResults} />
                     <Route path='/register' component={Register} />
                     <Route path='/login' component={Login} />
+                    <Route path='/movieinfo' component={MovieInfo} />
                     <AuthRoute path='/fav' component={FavoriteMovieList} />
               </Switch>
               </div>
