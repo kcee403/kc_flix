@@ -8,6 +8,8 @@ import Login from './auth/Login';
 import MovieInfo from './MovieInfo';
 import decode from 'jwt-decode';
 import {connect} from 'react-redux';
+import Modal from './UI/Modal/Modal';
+import {closingModal} from '../actions';
 
 const CheckAuth = () => {
   const token = localStorage.getItem('token');
@@ -41,6 +43,7 @@ const AuthRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends Component {
+
   render() {
     return (
           <div>
@@ -64,8 +67,9 @@ class App extends Component {
 function mapStateToProps(state) {
   console.log("isAuthenticated state is: ", state);
   return {
-      isAuthenticated: state.auth.isAuthenticated
+      isAuthenticated: state.auth.isAuthenticated,
+      isAttemptingToAccess: state.atmpt.isAttemptingToAccess
   }
 }
 
-export default connect(mapStateToProps, null)(App);
+export default connect(mapStateToProps, {closingModal})(App);

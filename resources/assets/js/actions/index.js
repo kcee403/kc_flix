@@ -2,7 +2,9 @@ import * as actionTypes from './actionTypes.js';
 
 export {
     logout,
-    login
+    login,
+    attempting,
+    closingModal,
 } from './auth';
 export {
   requestMovies

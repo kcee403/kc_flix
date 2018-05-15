@@ -15,3 +15,18 @@ export function login(isAuthenticated) {
   }
   return action;
 }
+
+export function attempting(isAuthenticated) {
+  const action = {
+    type: actionTypes.ATTEMPTING,
+    isAuthenticated
+  }
+  return action;
+}
+
+export function closingModal() {
+  const action = {
+    type: actionTypes.CLOSINGMODAL,
+  }
+  return action;
+}
