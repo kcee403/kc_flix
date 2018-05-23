@@ -18,13 +18,9 @@ export function removeFromFavorite(movieRemoved) {
 
 export function postToFavorite(movieTitle, movieId) {
   const favorited = {
-    title: movieTitle,
     id: movieId
   }
-      axios.post( '/api/favorites', favorited)
-            .then( response => {
-              console.log(error.response);
-            });
+
 }
 
 export const purchaseBurger = ( orderData, token ) => {

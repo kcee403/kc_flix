@@ -3,7 +3,19 @@ import { connect } from 'react-redux';
 import MovieItem from './MovieItem';
 import Navbar from './includes/Navbar';
 import { NavLink } from 'react-router-dom';
+
 class FavoriteMovieList extends Component {
+  state = {
+    data: []
+  }
+
+  componentWillMount() {
+      axios.get('/api/users').then(response => {
+          console.log(response);
+
+      });
+  }
+
   render() {
     {console.log(this.props.favorites)}
     return(

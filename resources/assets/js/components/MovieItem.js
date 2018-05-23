@@ -19,15 +19,18 @@ class MovieItem extends Component {
 
 addToFavorite = () => {
   let favorited = {
-    movie_title: this.props.movie.title,
     movie_id: this.props.movie.id
   }
   this.setState({isFavorited: !this.state.isFavorited});
   this.props.addToFavorite(this.props.movie);
   axios.post( '/api/favorites/' + favorited.movie_id)
         .then( response => {
+          console.log("Response (post favorites): ", response);
+          console.log("Response.Data (post favorites): ",response.data);
+
         }).catch(error => {
-      console.log(error.response.data.message);
+      console.log("Error Response: ", error.response);
+      console.log("Error Response Data Message: ", error.response.data.message);
       console.log("The favorited movie_id variable is: ", favorited.movie_id);
   });
 
