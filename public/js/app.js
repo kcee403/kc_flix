@@ -27921,12 +27921,29 @@ var FavoriteMovieList = function (_Component) {
   _inherits(FavoriteMovieList, _Component);
 
   function FavoriteMovieList() {
+    var _ref;
+
+    var _temp, _this, _ret;
+
     _classCallCheck(this, FavoriteMovieList);
 
-    return _possibleConstructorReturn(this, (FavoriteMovieList.__proto__ || Object.getPrototypeOf(FavoriteMovieList)).apply(this, arguments));
+    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = FavoriteMovieList.__proto__ || Object.getPrototypeOf(FavoriteMovieList)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+      data: []
+    }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(FavoriteMovieList, [{
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      axios.get('/api/users').then(function (response) {
+        console.log(response);
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       {
@@ -82920,12 +82937,6 @@ function postToFavorite(movieTitle, movieId) {
   var favorited = {
     id: movieId
   };
-  axios.post('/api/favorites', favorited).then(function (response) {
-    console.log(response);
-    console.log(response.data);
-  }).catch(function (error) {
-    console.log(error.response);
-  });
 }
 
 var purchaseBurger = function purchaseBurger(orderData, token) {
