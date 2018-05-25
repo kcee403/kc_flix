@@ -20781,7 +20781,7 @@ var Login = function (_Component) {
         email: _this.state.email,
         password: _this.state.password
       };
-      console.log("User Name is: " + user.name);
+      console.log("User Name is: " + INMOTION);
       console.log(INMOTION);
       __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
         console.log("Response is: ", res);

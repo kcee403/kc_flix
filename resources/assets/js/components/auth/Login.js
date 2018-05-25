@@ -49,7 +49,7 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-          console.log( "User Name is: " + user.name);
+          console.log( "User Name is: " + INMOTION);
           console.log(INMOTION);
     axios.post(INMOTION, user)
       .then(res => {
