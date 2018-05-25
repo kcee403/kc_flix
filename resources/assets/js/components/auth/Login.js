@@ -50,9 +50,9 @@ class Login extends Component {
       password: this.state.password,
     };
           console.log( "User Name is: " + user.name);
+          console.log(INMOTION);
     axios.post(INMOTION, user)
       .then(res => {
-        console.log("Current API call wast to: ", INMOTION);
         console.log("Response is: ", res);
         console.log("SuccessStatus is: ", res.data);
         localStorage.setItem('token', res.data.success.token.accessToken);

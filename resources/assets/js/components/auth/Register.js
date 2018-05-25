@@ -77,9 +77,10 @@ class Register extends Component {
       zipcode: this.state.zipcode
     };
           console.log(user.name);
+          console.log(INMOTION);
+
     axios.post(INMOTION, user)
       .then(res => {
-        console.log("Current API call wast to: ", INMOTION);
         console.log(res);
         console.log(res.data);
       }).catch(error => {

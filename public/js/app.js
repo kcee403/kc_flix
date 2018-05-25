@@ -20775,13 +20775,15 @@ var Login = function (_Component) {
     }, _this.handleSubmit = function (event) {
       event.preventDefault();
 
+      var INMOTION = 'www.kcflix.site/api/users/login';
       var user = {
         name: _this.state.name,
         email: _this.state.email,
         password: _this.state.password
       };
       console.log("User Name is: " + user.name);
-      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('/api/users/login', user).then(function (res) {
+      console.log(INMOTION);
+      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
         console.log("Response is: ", res);
         console.log("SuccessStatus is: ", res.data);
         localStorage.setItem('token', res.data.success.token.accessToken);
@@ -28500,7 +28502,7 @@ __webpack_require__(223);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 __webpack_require__(129);
-
+//
 __webpack_require__(520);
 
 /***/ }),
@@ -91764,6 +91766,7 @@ var Register = function (_Component) {
         zipcode: event.target.value });
     }, _this.handleSubmit = function (event) {
       event.preventDefault();
+      var INMOTION = 'www.kcflix.site/api/users/register';
 
       var user = {
         name: _this.state.name,
@@ -91775,7 +91778,9 @@ var Register = function (_Component) {
         zipcode: _this.state.zipcode
       };
       console.log(user.name);
-      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('/api/users/register', user).then(function (res) {
+      console.log(INMOTION);
+
+      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
         console.log(res);
         console.log(res.data);
       }).catch(function (error) {
