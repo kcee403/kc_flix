@@ -38,7 +38,7 @@ define('LARAVEL_START', microtime(true));
 // $app = require_once __DIR__.'/../../kcflix.site/bootstrap/app.php';
 
 
-ORIGINAL BOOTSTRAP AUTOLOAD
+// ORIGINAL BOOTSTRAP AUTOLOAD
 require __DIR__.'/../vendor/autoload.php';
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
