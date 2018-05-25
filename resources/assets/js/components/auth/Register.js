@@ -79,7 +79,7 @@ class Register extends Component {
           console.log(user.name);
           console.log(INMOTION);
 
-    axios.post('https://www.kcflix.site/api/users/register', user)
+    axios.post('www.kcflix.site/api/users/register/', user)
       .then(res => {
         console.log(res);
         console.log(res.data);
