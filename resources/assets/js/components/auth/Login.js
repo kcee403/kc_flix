@@ -43,13 +43,13 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    const INMOTION = 'www.kcflix.site/api/users/login';
+    const INMOTION = 'https://www.kcflix.site/api/users/login';
     const user = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
     };
-          console.log( "User Name is: " + INMOTION);
+          console.log( "User Name is: " + user.name);
           console.log(INMOTION);
     axios.post(INMOTION, user)
       .then(res => {

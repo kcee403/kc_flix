@@ -20775,13 +20775,13 @@ var Login = function (_Component) {
     }, _this.handleSubmit = function (event) {
       event.preventDefault();
 
-      var INMOTION = 'www.kcflix.site/api/users/login';
+      var INMOTION = 'https://www.kcflix.site/api/users/login';
       var user = {
         name: _this.state.name,
         email: _this.state.email,
         password: _this.state.password
       };
-      console.log("User Name is: " + INMOTION);
+      console.log("User Name is: " + user.name);
       console.log(INMOTION);
       __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
         console.log("Response is: ", res);
@@ -91766,7 +91766,7 @@ var Register = function (_Component) {
         zipcode: event.target.value });
     }, _this.handleSubmit = function (event) {
       event.preventDefault();
-      var INMOTION = 'www.kcflix.site/api/users/register';
+      var INMOTION = 'https://www.kcflix.site/api/users/register';
 
       var user = {
         name: _this.state.name,

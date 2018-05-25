@@ -65,7 +65,7 @@ class Register extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const INMOTION = 'www.kcflix.site/api/users/register';
+    const INMOTION = 'https://www.kcflix.site/api/users/register';
 
     const user = {
       name: this.state.name,
