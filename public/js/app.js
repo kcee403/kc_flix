@@ -91766,7 +91766,7 @@ var Register = function (_Component) {
         zipcode: event.target.value });
     }, _this.handleSubmit = function (event) {
       event.preventDefault();
-      var INMOTION = 'https://www.kcflix.site/api/users/register';
+      var INMOTION = 'https://kcflix-api.herokuapp.com/api/users/register';
 
       var user = {
         name: _this.state.name,
@@ -91780,7 +91780,7 @@ var Register = function (_Component) {
       console.log(user.name);
       console.log(INMOTION);
 
-      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('https://www.kcflix.site/api/users/register', user).then(function (res) {
+      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('https://kcflix-api.herokuapp.com/api/users/register', user).then(function (res) {
         console.log(res);
         console.log(res.data);
       }).catch(function (error) {
