@@ -50,7 +50,7 @@ class Login extends Component {
       password: this.state.password,
     };
           console.log( "User Name is: " + user.name);
-          console.log("Site api Call to: " + INMOTION);
+          console.log("Site api Call to: " + 'https://www.kcflix.site/api/users/login');
     axios.post(INMOTION, user)
       .then(res => {
         console.log("Response is: ", res);

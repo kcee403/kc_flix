@@ -20782,7 +20782,7 @@ var Login = function (_Component) {
         password: _this.state.password
       };
       console.log("User Name is: " + user.name);
-      console.log("Site api Call to: " + INMOTION);
+      console.log("Site api Call to: " + 'https://www.kcflix.site/api/users/login');
       __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
         console.log("Response is: ", res);
         console.log("SuccessStatus is: ", res.data);
@@ -91780,7 +91780,7 @@ var Register = function (_Component) {
       console.log(user.name);
       console.log(INMOTION);
 
-      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
+      __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post('https://www.kcflix.site/api/users/register', user).then(function (res) {
         console.log(res);
         console.log(res.data);
       }).catch(function (error) {
