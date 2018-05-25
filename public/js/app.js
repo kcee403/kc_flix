@@ -20782,14 +20782,14 @@ var Login = function (_Component) {
         password: _this.state.password
       };
       console.log("User Name is: " + user.name);
-      console.log(INMOTION);
+      console.log("Site api Call to: " + INMOTION);
       __WEBPACK_IMPORTED_MODULE_8_axios___default.a.post(INMOTION, user).then(function (res) {
         console.log("Response is: ", res);
         console.log("SuccessStatus is: ", res.data);
         localStorage.setItem('token', res.data.success.token.accessToken);
         var token = localStorage.getItem('token');
         token ? _this.props.login() : null;
-        console.log(token);
+        console.log("Token is :" + token);
         if (token) {
           __WEBPACK_IMPORTED_MODULE_6_jquery___default()(".input-button button").click(function (event) {
 

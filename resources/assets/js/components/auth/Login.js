@@ -50,7 +50,7 @@ class Login extends Component {
       password: this.state.password,
     };
           console.log( "User Name is: " + user.name);
-          console.log(INMOTION);
+          console.log("Site api Call to: " + INMOTION);
     axios.post(INMOTION, user)
       .then(res => {
         console.log("Response is: ", res);
@@ -58,7 +58,7 @@ class Login extends Component {
         localStorage.setItem('token', res.data.success.token.accessToken);
         let token = localStorage.getItem('token');
         token ? (this.props.login()) : null;
-        console.log(token);
+        console.log("Token is :" + token);
           if(token) {
               $(".input-button button").click(function(event) {
 
