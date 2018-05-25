@@ -65,7 +65,7 @@ class Register extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const INMOTION = 'https://www.kcflix.site/api/users/register';
+    const INMOTION = 'http://kcflix.site/api/users/register';
 
     const user = {
       name: this.state.name,
@@ -79,7 +79,7 @@ class Register extends Component {
           console.log(user.name);
           console.log(INMOTION);
 
-    axios.post('https://www.kcflix.site/api/users/register', user)
+    axios.post('http://kcflix.site/api/users/register', user)
       .then(res => {
         console.log(res);
         console.log(res.data);
