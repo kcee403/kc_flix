@@ -65,6 +65,7 @@ class Register extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    const INMOTION = 'www.kcflix.site/api/users/register';
 
     const user = {
       name: this.state.name,
@@ -76,8 +77,9 @@ class Register extends Component {
       zipcode: this.state.zipcode
     };
           console.log(user.name);
-    axios.post('www.kcflix.site/api/users/register', user)
+    axios.post(INMOTION, user)
       .then(res => {
+        console.log("Current API call wast to: ", INMOTION);
         console.log(res);
         console.log(res.data);
       }).catch(error => {

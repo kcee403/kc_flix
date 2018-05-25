@@ -43,14 +43,16 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
+    const INMOTION = 'www.kcflix.site/api/users/login';
     const user = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
     };
           console.log( "User Name is: " + user.name);
-    axios.post('www.kcflix.site/api/users/login', user)
+    axios.post(INMOTION, user)
       .then(res => {
+        console.log("Current API call wast to: ", INMOTION);
         console.log("Response is: ", res);
         console.log("SuccessStatus is: ", res.data);
         localStorage.setItem('token', res.data.success.token.accessToken);
